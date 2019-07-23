@@ -19,6 +19,11 @@
                     Die Suche nach "{{ search }}" brachte keine Ergebnisse.
                 </v-alert>
             </template>
+            <template v-slot:footer v-if="footerBtn">
+                <v-btn color="primary">
+                    {{ footerBtn }}
+                </v-btn>
+            </template>
         </v-data-table>
     </v-card>
 </template>
@@ -39,6 +44,10 @@
             },
             items: {
                 type: Array,
+                required: false
+            },
+            footerBtn: {
+                type: String,
                 required: false
             }
         }
