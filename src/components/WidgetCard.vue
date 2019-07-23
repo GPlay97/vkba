@@ -17,7 +17,7 @@
       </v-container>
     </v-card-text>
     <v-card-actions v-if="Array.isArray(actions) && actions.length">
-      <v-btn flat v-for="action in actions" :key="action">{{ action }}</v-btn>
+      <v-btn flat v-for="action in actions" :key="action" @click="$emit('actionClicked', action)">{{ action }}</v-btn>
     </v-card-actions>
   </v-card>
 </template>
